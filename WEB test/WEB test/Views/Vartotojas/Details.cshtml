@@ -1,0 +1,58 @@
+﻿@model OroUostoSistema.DatabaseOroUostas.Uzsakovas
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Uzsakovas</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Vardas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vardas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pavarde)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pavarde)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ElPastas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ElPastas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Numeris)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Numeris)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Slaptazodis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Slaptazodis)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,69 @@
+﻿@model OroUostoSistema.DatabaseOroUostas.Uzsakovas
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+    @*@Html.AntiForgeryToken()*@
+    
+    <div class="form-horizontal">
+        <h4>Uzsakovas</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.ID)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Vardas, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Vardas)
+                @Html.ValidationMessageFor(model => model.Vardas)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Pavarde, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Pavarde)
+                @Html.ValidationMessageFor(model => model.Pavarde)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ElPastas, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.ElPastas)
+                @Html.ValidationMessageFor(model => model.ElPastas)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Numeris, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Numeris)
+                @Html.ValidationMessageFor(model => model.Numeris)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Slaptazodis, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Slaptazodis)
+                @Html.ValidationMessageFor(model => model.Slaptazodis)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

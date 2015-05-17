@@ -1,0 +1,60 @@
+﻿@model IEnumerable<OroUostoSistema.DatabaseOroUostas.Uzsakovas>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Registruotis", "Registracija")
+</p>
+<p>
+    @Html.ActionLink("Atsijungti", "Atsijungti")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Vardas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pavarde)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ElPastas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Numeris)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Slaptazodis)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Vardas)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pavarde)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ElPastas)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Numeris)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Slaptazodis)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,14 @@
+﻿.error {
+    padding: 15px;
+}
+.error span{
+    color: red;
+    font-size: 30px;
+}
+.search-panel {
+    
+}
+.search-panel input{
+    max-width: 250px;
+    display: inline-block;
+}

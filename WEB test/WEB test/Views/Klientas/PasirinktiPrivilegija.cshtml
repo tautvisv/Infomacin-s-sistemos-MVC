@@ -1,0 +1,62 @@
+﻿@model OroUostoSistema.Models.AccountModelView
+@{
+    ViewBag.Title = "PasirinktiPrivilegija";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+    @*@Html.AntiForgeryToken()*@
+
+    <div class="form-horizontal">
+        <h4>Uzsakovas</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.Client.ID)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Client.Vardas, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Client.Vardas, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Client.Vardas)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Client.Pavarde, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Client.Pavarde, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Client.Pavarde)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Client.ElPastas, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Client.ElPastas, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Client.ElPastas)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Client.Numeris, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Client.Numeris, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Client.Numeris)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Services, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(x => x.Client.Paslauga_ID, new SelectList(Model.Services, "ID", "Veiksmas"), "Paslauga", new {@class="form-control"})
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}

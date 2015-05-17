@@ -1,0 +1,66 @@
+﻿@using OroUostoSistema.DatabaseOroUostas
+@model OroUostoSistema.Models.TicketReservationModelView
+
+@{
+    ViewBag.Title = "Redaguoti bilietą";
+    ViewBag.Uzsakytas = Model.Ticket.Busena == BilietoBusena.Uzsakyta || Model.Ticket.Busena == BilietoBusena.Sumoketa;
+}
+
+<h2>Rezervuoti Bilietą</h2>
+
+
+@using (Html.BeginForm())
+{
+
+    <div class="form-horizontal @if (ViewBag.Uzsakytas)
+                                {
+                                    <text>do-readonly</text>
+                                }">
+        <h4>Bilieto info</h4>
+        <hr />
+        <h2>@Model.Flight.Pavadinimas</h2>
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            <div class="col-md-2">
+                @Html.LabelFor(x => x.Ticket.SedimaVieta)
+            </div>
+            @Html.HiddenFor(model => model.Ticket.Busena)
+                        @Html.HiddenFor(model => model.Ticket.Skrydis_ID)
+            @Html.HiddenFor(model => model.Ticket.ID)
+            <div class="col-md-10">
+                <select name="Ticket.SedimaVieta_ID" id="Ticket_SedimaVieta_ID" class="form-control" required="required">
+                    <option class="form-control" value="" data-class="">Sedima Vieta</option>
+                    @foreach (var item in Model.Seats)
+                    {
+                        <option @if (Model.Ticket.SedimaVieta != null && Model.Ticket.SedimaVieta.Klase == item.Klase) { <text> selected="selected" </text>     } class="form-control" value="@item.ID" data-class="@item.GetKlassID">@item.GetFullName</option>
+                    }
+                </select>
+                @Html.HiddenFor(model => model.Ticket.SedimaVieta_ID)
+                @*@Html.DropDownListFor(x => x.Ticket.SedimaVieta_ID, new SelectList(@Model.Seats, "ID", "GetFullName"), "Sedima Vieta", new { @class = "form-control" })*@
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-2">
+                @Html.LabelFor(x => x.Ticket.Kaina)
+            </div>
+            <div class="col-md-10">
+                @Html.TextBoxFor(x => x.Ticket.Kaina, new { @readonly = "readonly", @class = "form-control" })
+            </div>
+        </div>
+    </div>
+
+
+    if (ViewBag.Uzsakytas)
+    {
+        <a href="/Klientas/PirktiBilieta/@Model.Ticket.ID">Pirkti!</a>
+    }
+    else
+    {
+        <button type="submit" class="btn">Pirkti!</button>
+    }
+
+
+
+}
+<script src="~/Scripts/OroUostasScipts/Klientas/BilietuKaina.js"></script>

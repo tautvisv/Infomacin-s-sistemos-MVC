@@ -1,0 +1,61 @@
+E:\Darbai\informacines sistemos\MVC\WEB test\WEB test\bin\WEB test.dll.config
+E:\Darbai\informacines sistemos\MVC\WEB test\WEB test\bin\WEB test.dll
+E:\Darbai\informacines sistemos\MVC\WEB test\WEB test\bin\WEB test.pdb
+E:\Darbai\informacines sistemos\MVC\WEB test\WEB test\bin\Antlr3.Runtime.dll
+E:\Darbai\informacines sistemos\MVC\WEB test\WEB test\bin\EntityFramework.dll
+E:\Darbai\informacines sistemos\MVC\WEB test\WEB test\bin\EntityFramework.SqlServer.dll
+E:\Darbai\informacines sistemos\MVC\WEB test\WEB test\bin\Microsoft.AspNet.Identity.Core.dll
+E:\Darbai\informacines sistemos\MVC\WEB test\WEB test\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\Darbai\informacines sistemos\MVC\WEB test\WEB test\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\Darbai\informacines sistemos\MVC\WEB test\WEB test\bin\Microsoft.Owin.dll
+E:\Darbai\informacines sistemos\MVC\WEB test\WEB test\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\Darbai\informacines sistemos\MVC\WEB test\WEB test\bin\Microsoft.Owin.Security.Cookies.dll
+E:\Darbai\informacines sistemos\MVC\WEB test\WEB test\bin\Microsoft.Owin.Security.dll
+E:\Darbai\informacines sistemos\MVC\WEB test\WEB test\bin\Microsoft.Owin.Security.Facebook.dll
+E:\Darbai\informacines sistemos\MVC\WEB test\WEB test\bin\Microsoft.Owin.Security.Google.dll
+E:\Darbai\informacines sistemos\MVC\WEB test\WEB test\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\Darbai\informacines sistemos\MVC\WEB test\WEB test\bin\Microsoft.Owin.Security.OAuth.dll
+E:\Darbai\informacines sistemos\MVC\WEB test\WEB test\bin\Microsoft.Owin.Security.Twitter.dll
+E:\Darbai\informacines sistemos\MVC\WEB test\WEB test\bin\Microsoft.Web.Infrastructure.dll
+E:\Darbai\informacines sistemos\MVC\WEB test\WEB test\bin\Newtonsoft.Json.dll
+E:\Darbai\informacines sistemos\MVC\WEB test\WEB test\bin\Owin.dll
+E:\Darbai\informacines sistemos\MVC\WEB test\WEB test\bin\System.Web.Helpers.dll
+E:\Darbai\informacines sistemos\MVC\WEB test\WEB test\bin\System.Web.Mvc.dll
+E:\Darbai\informacines sistemos\MVC\WEB test\WEB test\bin\System.Web.Optimization.dll
+E:\Darbai\informacines sistemos\MVC\WEB test\WEB test\bin\System.Web.Razor.dll
+E:\Darbai\informacines sistemos\MVC\WEB test\WEB test\bin\System.Web.WebPages.Deployment.dll
+E:\Darbai\informacines sistemos\MVC\WEB test\WEB test\bin\System.Web.WebPages.dll
+E:\Darbai\informacines sistemos\MVC\WEB test\WEB test\bin\System.Web.WebPages.Razor.dll
+E:\Darbai\informacines sistemos\MVC\WEB test\WEB test\bin\WebGrease.dll
+E:\Darbai\informacines sistemos\MVC\WEB test\WEB test\bin\System.Web.Helpers.xml
+E:\Darbai\informacines sistemos\MVC\WEB test\WEB test\bin\System.Web.Mvc.xml
+E:\Darbai\informacines sistemos\MVC\WEB test\WEB test\bin\System.Web.Optimization.xml
+E:\Darbai\informacines sistemos\MVC\WEB test\WEB test\bin\System.Web.Razor.xml
+E:\Darbai\informacines sistemos\MVC\WEB test\WEB test\bin\System.Web.WebPages.xml
+E:\Darbai\informacines sistemos\MVC\WEB test\WEB test\bin\System.Web.WebPages.Deployment.xml
+E:\Darbai\informacines sistemos\MVC\WEB test\WEB test\bin\System.Web.WebPages.Razor.xml
+E:\Darbai\informacines sistemos\MVC\WEB test\WEB test\bin\Newtonsoft.Json.xml
+E:\Darbai\informacines sistemos\MVC\WEB test\WEB test\bin\Antlr3.Runtime.pdb
+E:\Darbai\informacines sistemos\MVC\WEB test\WEB test\bin\EntityFramework.xml
+E:\Darbai\informacines sistemos\MVC\WEB test\WEB test\bin\EntityFramework.SqlServer.xml
+E:\Darbai\informacines sistemos\MVC\WEB test\WEB test\bin\Microsoft.AspNet.Identity.Core.xml
+E:\Darbai\informacines sistemos\MVC\WEB test\WEB test\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\Darbai\informacines sistemos\MVC\WEB test\WEB test\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\Darbai\informacines sistemos\MVC\WEB test\WEB test\bin\Microsoft.Owin.xml
+E:\Darbai\informacines sistemos\MVC\WEB test\WEB test\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\Darbai\informacines sistemos\MVC\WEB test\WEB test\bin\Microsoft.Owin.Security.xml
+E:\Darbai\informacines sistemos\MVC\WEB test\WEB test\bin\Microsoft.Owin.Security.Facebook.xml
+E:\Darbai\informacines sistemos\MVC\WEB test\WEB test\bin\Microsoft.Owin.Security.Cookies.xml
+E:\Darbai\informacines sistemos\MVC\WEB test\WEB test\bin\Microsoft.Owin.Security.OAuth.xml
+E:\Darbai\informacines sistemos\MVC\WEB test\WEB test\bin\Microsoft.Owin.Security.Google.xml
+E:\Darbai\informacines sistemos\MVC\WEB test\WEB test\bin\Microsoft.Owin.Security.Twitter.xml
+E:\Darbai\informacines sistemos\MVC\WEB test\WEB test\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\Darbai\informacines sistemos\MVC\WEB test\WEB test\obj\Debug\WEB test.csprojResolveAssemblyReference.cache
+E:\Darbai\informacines sistemos\MVC\WEB test\WEB test\obj\Debug\WEB test.dll
+E:\Darbai\informacines sistemos\MVC\WEB test\WEB test\obj\Debug\WEB test.pdb
+E:\Darbai\informacines sistemos\MVC\WEB test\WEB test\bin\System.Net.Http.Formatting.dll
+E:\Darbai\informacines sistemos\MVC\WEB test\WEB test\bin\System.Web.Http.dll
+E:\Darbai\informacines sistemos\MVC\WEB test\WEB test\bin\System.Web.Http.WebHost.dll
+E:\Darbai\informacines sistemos\MVC\WEB test\WEB test\bin\System.Net.Http.Formatting.xml
+E:\Darbai\informacines sistemos\MVC\WEB test\WEB test\bin\System.Web.Http.xml
+E:\Darbai\informacines sistemos\MVC\WEB test\WEB test\bin\System.Web.Http.WebHost.xml
