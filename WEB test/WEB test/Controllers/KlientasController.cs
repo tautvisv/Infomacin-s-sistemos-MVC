@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Data.Entity;
-using System.Diagnostics;
 using System.Linq;
-using System.Web;
-using System.Web.Caching;
 using System.Web.Mvc;
 using OroUostoSistema.DatabaseOroUostas;
 using OroUostoSistema.Models;
@@ -60,6 +57,21 @@ namespace OroUostoSistema.Controllers
         }
 
         [HttpGet]
+        public ActionResult Uzsakyti(int id, int? niekas)
+        {
+            using (var db = new DB())
+            {
+                var ticket = db.Tickets.FirstOrDefault(x => x.ID == id);
+                if (ticket != null)
+                {
+                    ticket.SumoketiUzBielieta(db);
+                    return RedirectToAction("RezervuotiBilieta", "Klientas", new { id = ticket.Skrydis_ID, ticketID = ticket.ID });
+                }
+                else throw new NullReferenceException("Nėra tokio bilieto!");
+            }
+        }
+
+        [HttpGet]
         public ActionResult PirktiBilieta(int id)
         {
             using (var db = new DB())
@@ -80,13 +92,7 @@ namespace OroUostoSistema.Controllers
         {
             using (var db = new DB())
             {
-                db.Users.Add(client);
-                var entry = db.Entry(client);
-                entry.State = EntityState.Modified;
-                entry.Property(e => e.Slaptazodis).IsModified = false;
-                entry.Property(e => e.Tipas).IsModified = false;
-                db.Configuration.ValidateOnSaveEnabled = false;
-                db.SaveChanges();
+                client.NaujosPrivilegijos(db);
             }
             
             return RedirectToAction("Index");

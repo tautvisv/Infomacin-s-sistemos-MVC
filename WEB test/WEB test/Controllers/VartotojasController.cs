@@ -56,10 +56,8 @@ namespace OroUostoSistema.Controllers
         {
             if (!ModelState.IsValid) 
                 return View(uzsakovas);
-            uzsakovas.EncodePassword();
-            uzsakovas.Tipas = VartotojoTipas.Admin;
-            uzsakovas.Save(_db);
-            return RedirectToAction("Index");
+            uzsakovas.Registruoti(_db);
+            return RedirectToAction("Index", "Klientas");
         }
 
         public ActionResult Prisijungimas()
@@ -71,7 +69,7 @@ namespace OroUostoSistema.Controllers
         //[ValidateAntiForgeryToken]
         public ActionResult Prisijungimas([Bind(Include = "Email,Password")] UserModelView prisijungimas)
         {
-            var user = prisijungimas.Login(_db);
+            var user = prisijungimas.Prisijungti(_db);
             if (user == null)
             {
                 prisijungimas.Error = "Blogi prisijungimo duomenys";
@@ -80,8 +78,6 @@ namespace OroUostoSistema.Controllers
 
             AccountManagerHelper.Login(Request.GetOwinContext(),user);
             Session["UserID"] = user.ID;
-            //AntiForgeryConfig.UniqueClaimTypeIdentifier = "user";
-            //FormsAuthentication.SetAuthCookie(prisijungimas.Email, false);
             return RedirectToAction("Index", "Klientas");
         }
 

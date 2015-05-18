@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using OroUostoSistema.Helpers;
@@ -50,6 +51,23 @@ namespace OroUostoSistema.DatabaseOroUostas
             this.ReSlaptazodis = PasswordEncrypter.Encode(this.ReSlaptazodis);
         }
 
+        public void Registruoti(DB db)
+        {
+            this.EncodePassword();
+            this.Tipas = VartotojoTipas.Admin;
+            this.Save(db);
+        }
+
+        public void NaujosPrivilegijos(DB db)
+        {
+            db.Users.Add(this);
+            var entry = db.Entry(this);
+            entry.State = EntityState.Modified;
+            entry.Property(e => e.Slaptazodis).IsModified = false;
+            entry.Property(e => e.Tipas).IsModified = false;
+            db.Configuration.ValidateOnSaveEnabled = false;
+            db.SaveChanges();
+        }
         public void Save(DB db)
         {
             db.Users.Add(this);

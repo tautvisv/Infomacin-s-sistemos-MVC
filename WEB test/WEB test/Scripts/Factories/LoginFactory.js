@@ -4,7 +4,7 @@
         var deferredObject = $q.defer();
 
         $http.post(
-            '/Account/Login', {
+            '/Account/Prisijungti', {
                 Email: emailAddress,
                 Password: password,
                 RememberMe: rememberMe

@@ -19,7 +19,7 @@ namespace OroUostoSistema.Models
         public string Name { get; set; }
         public string Number { get; set; }
         public string Error { get; set; }
-        public Uzsakovas Login(DB db)
+        public Uzsakovas Prisijungti(DB db)
         {
             this.Password = PasswordEncrypter.Encode(this.Password);
             var user = db.Users.FirstOrDefault(x => x.ElPastas.Equals(this.Email) && x.Slaptazodis.Equals(this.Password));

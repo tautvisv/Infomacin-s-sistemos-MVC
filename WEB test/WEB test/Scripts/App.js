@@ -20,7 +20,7 @@ var configFunction = function ($routeProvider, $httpProvider) {
             templateUrl: 'routesDemo/three',
         })
         .when('/login', {
-            templateUrl: '/Account/Login',
+            templateUrl: '/Account/Prisijungti',
             controller: LoginController
         })
         .when('/register', {
