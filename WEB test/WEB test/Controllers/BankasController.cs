@@ -20,10 +20,25 @@ namespace OroUostoSistema.Controllers
                 return View(ticket);
             }
         }
-        [HttpPost]
-        public ActionResult Index(int id,int? niekas)
+
+        [HttpGet]
+        public ActionResult EditReservation(int id)
         {
-            return RedirectToAction("Uzsakyti", "Klientas", new {id = id, niekas = niekas});
+            using (var db = new DB())
+            {
+                var ticket = db.Tickets.Include(x => x.Skrydis).FirstOrDefault(x => x.ID == id);
+                return View(ticket);
+            }
+        }
+        [HttpPost]
+        public ActionResult EditReservation(int id, int? par)
+        {
+            return RedirectToAction("Redaguoti", "Klientas", new { id = id });
+        }
+        [HttpPost]
+        public ActionResult Index(int id, int? par)
+        {
+            return RedirectToAction("Uzsakyti", "Klientas", new { id = id, parm = par });
             //using (var db = new DB())
             //{
             //    var ticket = db.Tickets.FirstOrDefault(x => x.ID == id);

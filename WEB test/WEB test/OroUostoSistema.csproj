@@ -1059,6 +1059,7 @@
     <Content Include="Views\Klientas\RedaguotiRezervuotaBilieta.cshtml" />
     <Content Include="Views\Klientas\RezervuotiBilieta.cshtml" />
     <Content Include="Views\Bankas\Index.cshtml" />
+    <Content Include="Views\Bankas\EditReservation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

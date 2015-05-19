@@ -14,14 +14,14 @@ namespace OroUostoSistema.Models
             {
                 Ticket = db.Tickets.Include(x => x.SedimaVieta).FirstOrDefault(x => x.ID == ticketID);
                 Flight = db.Flights.FirstOrDefault(x => x.ID == Ticket.Skrydis_ID);
-                IEnumerable<int?> seatsIDs = db.Tickets.Where(x => x.Skrydis_ID == Flight.ID).Select(x => x.SedimaVieta_ID).ToArray().Where(x => x != Ticket.SedimaVieta_ID);
+                IEnumerable<int?> seatsIDs = db.Tickets.Where(x => x.Skrydis_ID == Flight.ID && x.Busena != BilietoBusena.Atsaukta).Select(x => x.SedimaVieta_ID).ToArray().Where(x => x != Ticket.SedimaVieta_ID);
                 Seats = db.Seats.Where(x => x.Lektuvas_ID == Ticket.Skrydis_ID && !seatsIDs.Contains(x.ID)).ToList();
             }
             else if (ticketID == null)
             {
                 Flight = db.Flights.FirstOrDefault(x => x.ID == flightID);
-                IList<int?> seatsIDs = db.Tickets.Where(x => x.Skrydis_ID == flightID).Select(x => x.SedimaVieta_ID).ToArray();
-                Seats = db.Seats.Where(x => x.Lektuvas_ID == flightID && !seatsIDs.Contains(x.ID)).ToList();
+                IList<int?> seatsIDs = db.Tickets.Where(x => x.Skrydis_ID == flightID && x.Busena != BilietoBusena.Atsaukta).Select(x => x.SedimaVieta_ID).ToArray();
+                Seats = db.Seats.Where(x => x.Lektuvas_ID == flightID  && !seatsIDs.Contains(x.ID)).ToList();
                 Ticket = new Bilietas() { Kaina = 300.00m, Skrydis_ID = flightID };
             }
             else

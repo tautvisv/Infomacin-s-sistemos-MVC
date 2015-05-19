@@ -5,13 +5,16 @@ document.getElementById('Ticket_SedimaVieta_ID').onchange = function () {
 };
 (function () {
     var i = 0;
-    var elements = document.querySelector('.do-readonly').querySelectorAll('input');
-    for (i = 0; i < elements.length; i++) {
-        elements[i].setAttribute("readOnly", true);
-    }
-    var elementsSel = document.querySelector('.do-readonly').querySelectorAll('select');
-    for (i = 0; i < elementsSel.length; i++) {
-        elementsSel[i].setAttribute("disabled", true);
+    var readonly = document.querySelector('.do-readonly');
+    if (readonly) {
+        var elements = readonly.querySelectorAll('input');
+        for (i = 0; i < elements.length; i++) {
+            elements[i].setAttribute("readOnly", true);
+        }
+        var elementsSel = readonly.querySelectorAll('select');
+        for (i = 0; i < elementsSel.length; i++) {
+            elementsSel[i].setAttribute("disabled", true);
+        }
     }
     //var sedimaVieta = document.getElementById('Ticket_SedimaVieta_ID');
     //var sedimaVietaList = document.getElementById('Ticket_SedimaVieta_ID');

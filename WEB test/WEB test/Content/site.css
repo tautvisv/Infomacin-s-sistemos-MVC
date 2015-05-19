@@ -12,3 +12,7 @@
     max-width: 250px;
     display: inline-block;
 }
+.status {
+    font-size:35px;
+    color: #f00;
+}

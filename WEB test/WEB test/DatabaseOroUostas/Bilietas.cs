@@ -16,6 +16,7 @@ namespace OroUostoSistema.DatabaseOroUostas
         Parduota = 4,
         Atsaukta = 5,
         Redaguota = 6,
+        LaukiamaPatvirtinimoPoRedagavimo = 7,
         Kita = 10,
     }
     public class Bilietas
@@ -27,6 +28,8 @@ namespace OroUostoSistema.DatabaseOroUostas
 
         [ForeignKey("Pardavejas")]
         public int? Pardavejas_ID { get; set; }
+
+        [Display(Name = "Pardavėjas")]
         public virtual Pardavejas Pardavejas { get; set; }
 
         [ForeignKey("SedimaVieta")]
@@ -57,7 +60,10 @@ namespace OroUostoSistema.DatabaseOroUostas
                         case BilietoBusena.Uzsakyta:
                             status = "Užsakyta";
                             break;
-                        default:
+                        case BilietoBusena.LaukiamaPatvirtinimoPoRedagavimo:
+                            status = "Laukiama patvirtinimo po redagavimo";
+                            break;
+                        default: 
                             status = Busena.ToString();
                             break;
                     }
@@ -96,6 +102,22 @@ namespace OroUostoSistema.DatabaseOroUostas
             db.Entry(this).Property(x => x.SedimaVieta_ID).IsModified = true;
             //db.Entry(this).Property(x => x.Pardavejas_ID).IsModified = true;
             db.Entry(this).Property(x => x.Busena).IsModified = true;
+            db.SaveChanges();
+        }
+
+        internal void TrintiBilieta(DB db)
+        {
+            this.Busena = BilietoBusena.Atsaukta;
+            db.Tickets.Attach(this);
+            db.Entry(this).Property(x => x.Busena).IsModified = true;
+            db.SaveChanges();
+        }
+
+        public void BaigtiRedagavima(DB db)
+        {
+            this.Busena = BilietoBusena.LaukiamaPatvirtinimoPoRedagavimo;
+            db.Tickets.Attach(this);
+            db.Entry(this).State = EntityState.Modified;
             db.SaveChanges();
         }
     }

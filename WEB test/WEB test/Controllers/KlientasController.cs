@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Data.Entity;
 using System.Linq;
+using System.Net;
 using System.Web.Mvc;
+using System.Web.Routing;
 using OroUostoSistema.DatabaseOroUostas;
 using OroUostoSistema.Models;
 
@@ -57,7 +59,7 @@ namespace OroUostoSistema.Controllers
         }
 
         [HttpGet]
-        public ActionResult Uzsakyti(int id, int? niekas)
+        public ActionResult Uzsakyti(int id, int? parm)
         {
             using (var db = new DB())
             {
@@ -80,11 +82,6 @@ namespace OroUostoSistema.Controllers
                 if (ticket != null) ticket.PirktiBielieta(db);
                 return RedirectToAction("Index");
             }
-        }
-
-        public ActionResult PerziuretiBilieta(int id)
-        {
-            return View();
         }
 
         [HttpPost]
@@ -112,11 +109,25 @@ namespace OroUostoSistema.Controllers
             }
             using (var db = new DB())
             {
-                var user = db.Users.FirstOrDefault(x => x.ID == userID);
-                var services = db.Services.ToList();
-                return View(new AccountModelView(user, services));
+
+                return View(new AccountModelView(db, userID));
             }
             
+        }
+
+        [HttpGet]
+        public ActionResult Redaguoti(int id)
+        {
+            using (var db = new DB())
+            {
+                var ticket = db.Tickets.FirstOrDefault(x => x.ID == id);
+                if (ticket != null)
+                {
+                    ticket.BaigtiRedagavima(db);
+                    return RedirectToAction("RedaguotiRezervuotaBilieta", "Klientas", new { id = ticket.ID });
+                }
+                else throw new NullReferenceException("Nėra tokio bilieto!");
+            }
         }
         [HttpGet]
         public ActionResult RedaguotiRezervuotaBilieta(int id)
@@ -129,12 +140,21 @@ namespace OroUostoSistema.Controllers
             }
         }
         [HttpPost]
-        public ActionResult RedaguotiRezervuotaBilieta(Bilietas ticket)
+        public ActionResult RedaguotiRezervuotaBilieta(Bilietas ticket, int action)
         {
             using (var db = new DB())
             {
-                ticket.RedaguotiBielieta(db);
-                return RedirectToAction("Index");
+                switch (action)
+                {
+                    case 1:
+                        ticket.RedaguotiBielieta(db);
+                        return RedirectToAction("EditReservation", "Bankas", new { id = ticket.ID});
+                    case 2:
+                        ticket.TrintiBilieta(db);
+                        return RedirectToAction("GautiBilietus", "Klientas", new { id = Session["UserID"]});
+                    default:
+                        throw new Exception("Toks veiksmas nerastas");
+                }
             }
         }
 	}

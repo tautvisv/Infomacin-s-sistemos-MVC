@@ -3,13 +3,13 @@
 
 @{
     ViewBag.Title = "Redaguoti bilietą";
-    ViewBag.Uzsakytas = Model.Ticket.Busena == BilietoBusena.Uzsakyta || Model.Ticket.Busena == BilietoBusena.Sumoketa;
+    ViewBag.Uzsakytas = Model.Ticket.Busena == BilietoBusena.Uzsakyta || Model.Ticket.Busena == BilietoBusena.Sumoketa || Model.Ticket.Busena == BilietoBusena.Atsaukta;
 }
 
 <h2>Rezervuoti Bilietą</h2>
 
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("RedaguotiRezervuotaBilieta", "Klientas", FormMethod.Post, new {id = "main_form"}))
 {
 
     <div class="form-horizontal @if (ViewBag.Uzsakytas)
@@ -49,18 +49,33 @@
             </div>
         </div>
     </div>
+     @Html.Hidden("action", "1", new { id = "action"})
 
-
-    if (ViewBag.Uzsakytas)
+    <div><span class ="status" >@Model.Ticket.GetStatus</span></div>
+    if (Model.Ticket.Busena != BilietoBusena.Atsaukta)
     {
-        <a href="/Klientas/PirktiBilieta/@Model.Ticket.ID">Pirkti!</a>
+
+        if (ViewBag.Uzsakytas)
+        {
+        <a href="/Klientas/PirktiBilieta/@Model.Ticket.ID">Redaguoti!</a>
     }
     else
     {
         <button type="submit" class="btn">Pirkti!</button>
+    }
+   <button type="button" onclick="atsaukti()" class="btn">Atšaukti rezervaciją!</button>
     }
 
 
 
 }
 <script src="~/Scripts/OroUostasScipts/Klientas/BilietuKaina.js"></script>
+<script type="text/javascript">
+    function atsaukti() {
+        if (confirm("Ar tikrai norite atšaukti bilieto rezervavimą?")) {
+            var forma = document.querySelector('#main_form');
+            document.querySelector('#action').value = 2;
+            forma.submit();
+        }
+    }
+</script>

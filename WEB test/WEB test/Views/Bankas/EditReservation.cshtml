@@ -1,0 +1,13 @@
+﻿@model OroUostoSistema.DatabaseOroUostas.Bilietas
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Geriausias bankas</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(x => x.ID)
+    <div>Perkamas skrydis yra <b>@Model.Skrydis.Pavadinimas</b>.Jūs turite sumokėti <b>@Model.Kaina€</b>.</div>
+    <button class="btn">Sumokėti</button>
+}
