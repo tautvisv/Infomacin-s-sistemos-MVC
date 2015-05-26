@@ -138,6 +138,6 @@ E:\Darbai\informacines sistemos\MVC git\WEB test\WEB test\bin\fi\Npgsql.resource
 E:\Darbai\informacines sistemos\MVC git\WEB test\WEB test\bin\fr\Npgsql.resources.dll
 E:\Darbai\informacines sistemos\MVC git\WEB test\WEB test\bin\ja\Npgsql.resources.dll
 E:\Darbai\informacines sistemos\MVC git\WEB test\WEB test\bin\zh-CN\Npgsql.resources.dll
-E:\Darbai\informacines sistemos\MVC git\WEB test\WEB test\obj\Debug\OroUostoSistema.csprojResolveAssemblyReference.cache
 E:\Darbai\informacines sistemos\MVC git\WEB test\WEB test\obj\Debug\WEB test.dll
 E:\Darbai\informacines sistemos\MVC git\WEB test\WEB test\obj\Debug\WEB test.pdb
+E:\Darbai\informacines sistemos\MVC git\WEB test\WEB test\obj\Debug\OroUostoSistema.csprojResolveAssemblyReference.cache

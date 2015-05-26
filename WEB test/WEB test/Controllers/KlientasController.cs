@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
@@ -21,6 +22,8 @@ namespace OroUostoSistema.Controllers
                 return View("Index", flights.Flights);
             }
         }
+
+
         [AllowAnonymous]
         public ActionResult Index()
         {

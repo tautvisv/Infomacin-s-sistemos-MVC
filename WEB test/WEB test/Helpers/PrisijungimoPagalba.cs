@@ -10,9 +10,10 @@ using OroUostoSistema.DatabaseOroUostas;
 
 namespace OroUostoSistema.Helpers
 {
-    public static class AccountManagerHelper
+    public static class 
+        PrisijungimoPagalba
     {
-        public static void Login(IOwinContext context, Uzsakovas user)
+        public static void Prisijungimas(IOwinContext context, Uzsakovas user)
         {
             var claims = new List<Claim>();
 
@@ -26,7 +27,7 @@ namespace OroUostoSistema.Helpers
             var authenticationManager = context.Authentication;
             authenticationManager.SignIn(id);
         }
-        public static void Logout(IOwinContext context)
+        public static void Atjungti(IOwinContext context)
         {
             var authenticationManager = context.Authentication;
             authenticationManager.SignOut();

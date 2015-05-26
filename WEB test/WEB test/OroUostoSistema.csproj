@@ -204,7 +204,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Helpers\AccountManagerHelper.cs" />
+    <Compile Include="Helpers\PrisijungimoPagalba.cs" />
     <Compile Include="Helpers\PasswordEncrypter.cs" />
     <Compile Include="Models\AccountModelView.cs" />
     <Compile Include="Models\MyMockData.cs" />

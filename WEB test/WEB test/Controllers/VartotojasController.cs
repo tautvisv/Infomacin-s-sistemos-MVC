@@ -1,13 +1,8 @@
 ﻿using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Security.Claims;
-using System.Threading.Tasks;
 using System.Web;
-using System.Web.Helpers;
 using System.Web.Mvc;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
 using OroUostoSistema.DatabaseOroUostas;
 using OroUostoSistema.Helpers;
 using OroUostoSistema.Models;
@@ -76,14 +71,14 @@ namespace OroUostoSistema.Controllers
                 return View(prisijungimas);
             }
 
-            AccountManagerHelper.Login(Request.GetOwinContext(),user);
+            PrisijungimoPagalba.Prisijungimas(Request.GetOwinContext(),user);
             Session["UserID"] = user.ID;
             return RedirectToAction("Index", "Klientas");
         }
 
         public ActionResult Atsijungti()
         {
-            AccountManagerHelper.Logout(Request.GetOwinContext());
+            PrisijungimoPagalba.Atjungti(Request.GetOwinContext());
             return RedirectToAction("Index","Klientas");
         }
 
